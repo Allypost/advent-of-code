@@ -1,20 +1,11 @@
+import { Solution } from './solution';
+
 export class Day1 {
     DAY = 1;
-    #on = {};
     #data = '';
 
-    on(event, cb = () => 0) {
-        if (!this.#on[ event ])
-            this.#on[ event ] = [];
-
-        this.#on[ event ].push(cb);
-    }
-
-    _trigger(event, part, data) {
-        if (this.#on[ event ])
-            this.#on[ event ].forEach(e => e(part, data));
-
-        return data;
+    constructor() {
+        new Solution().bindTo(this);
     }
 
     part1(data = this.#data) {
