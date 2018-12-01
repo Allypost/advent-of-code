@@ -24,13 +24,13 @@ export class Day1 {
                 .resolve(data)
                 .then(res => res.trim().split('\n').map(Number))
                 .then(data => {
-                    const seen = [];
+                    const seen = new Set([]);
                     let i = 0;
                     let num = data[ 0 ];
-                    while (!seen.includes(num)) {
+                    while (!seen.has(num)) {
                         this._trigger('progress', 2, num);
 
-                        seen.push(num);
+                        seen.add(num);
                         i = (i + 1) % data.length;
                         num += data[ i ];
                     }
