@@ -1,1 +1,3 @@
-export default [];
+import { Day1 } from './1';
+
+export default [ Day1 ];
