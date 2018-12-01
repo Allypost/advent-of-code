@@ -1,6 +1,22 @@
 {
-  "name": "2018",
+  "name": "advent-of-code-2018",
   "version": "1.0.0",
+  "bugs": {
+    "url": "https://github.com/Allypost/advent-of-code-2018/issues",
+    "email": "me@allypost.net"
+  },
+  "author": {
+    "name": "Josip Igrec",
+    "email": "me@allypost.net"
+  },
+  "main": "solutions/solutions.mjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Allypost/advent-of-code-2018.git"
+  },
+  "scripts": {
+    "run": "node --harmony --experimental-modules index.mjs"
+  },
   "dependencies": {
     "node-fetch": "^2.3.0"
   }
