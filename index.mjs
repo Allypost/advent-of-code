@@ -10,7 +10,7 @@ console.log();
 
 const promiseDays =
     days
-        .map(async Day => {
+        .map(Day => async () => {
             const day = new Day();
 
             process.stdout.write(`Day ${ day.DAY }: `);
@@ -28,7 +28,7 @@ const promiseDays =
 
 (async () => {
     for (const day of promiseDays)
-        await day;
+        await day();
 
-    console.log('Done!')
+    console.log('Done!');
 })();
