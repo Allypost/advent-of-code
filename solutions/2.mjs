@@ -32,40 +32,47 @@ export class Day2 {
                 .resolve(data)
                 .then(data => data.split('\n'))
                 .then(
-                    data =>
-                        data.map(
-                            line =>
-                                line.split('')
-                                    .reduce((acc, char) => Object.assign(acc, { [ char ]: (acc[ char ] || 0) + 1 }), {}),
-                        ),
+                    data => data.map(
+                        line =>
+                            line
+                                .split('')
+                                .reduce(
+                                    (acc, char) => (
+                                        Object.assign(
+                                            acc,
+                                            {
+                                                [ char ]: (acc[ char ] || 0) + 1,
+                                            },
+                                        )
+                                    ),
+                                    {},
+                                ),
+                    ),
                 )
                 .then(
-                    data =>
-                        data.map(
-                            line =>
-                                Object
-                                    .values(line)
-                                    .filter(v => v === 3 || v === 2),
-                        ),
+                    data => data.map(
+                        line =>
+                            Object
+                                .values(line)
+                                .filter(v => v === 3 || v === 2),
+                    ),
                 )
                 .then(
-                    data =>
-                        data.map(
-                            line => [
-                                line.find(v => v === 2) !== undefined,
-                                line.find(v => v === 3) !== undefined,
-                            ],
-                        ),
+                    data => data.map(
+                        line => [
+                            line.find(v => v === 2) !== undefined,
+                            line.find(v => v === 3) !== undefined,
+                        ],
+                    ),
                 )
                 .then(
-                    data =>
-                        data.reduce(
-                            (acc, [ hasTwos, hasThrees ]) => [
-                                acc[ 0 ] + Number(hasTwos),
-                                acc[ 1 ] + Number(hasThrees),
-                            ],
-                            [ 0, 0 ],
-                        ),
+                    data => data.reduce(
+                        (acc, [ hasTwos, hasThrees ]) => [
+                            acc[ 0 ] + Number(hasTwos),
+                            acc[ 1 ] + Number(hasThrees),
+                        ],
+                        [ 0, 0 ],
+                    ),
                 )
                 .then(([ twos, threes ]) => twos * threes)
                 .then((data) => this._trigger('success', 1, data))
@@ -78,14 +85,11 @@ export class Day2 {
                 .resolve(data)
                 .then(data => data.split('\n'))
                 .then(
-                    data =>
-                        data.map(
-                            line =>
-                                data.find(
-                                    otherLine =>
-                                        this.getDifference(line, otherLine).length === 1,
-                                ),
+                    data => data.map(
+                        line => data.find(
+                            otherLine => this.getDifference(line, otherLine).length === 1,
                         ),
+                    ),
                 )
                 .then(data => data.filter(d => d))
                 .then(data => this.getSame(data.pop(), data.pop()))
