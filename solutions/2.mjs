@@ -44,16 +44,16 @@ export class Day2 {
                         data.map(
                             line =>
                                 Object
-                                    .entries(line)
-                                    .filter(([ _, v ]) => v === 3 || v === 2),
+                                    .values(line)
+                                    .filter(v => v === 3 || v === 2),
                         ),
                 )
                 .then(
                     data =>
                         data.map(
                             line => [
-                                line.find(([ _, v ]) => v === 2) !== undefined,
-                                line.find(([ _, v ]) => v === 3) !== undefined,
+                                line.find(v => v === 2) !== undefined,
+                                line.find(v => v === 3) !== undefined,
                             ],
                         ),
                 )
