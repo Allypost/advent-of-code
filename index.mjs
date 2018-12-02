@@ -23,6 +23,8 @@ const promiseDays =
             process.stdout.write('\tPart 2: ');
             Log.result(await day.part2(data));
 
+            console.log();
+
             return true;
         });
 
