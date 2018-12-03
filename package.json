@@ -19,5 +19,8 @@
   },
   "dependencies": {
     "node-fetch": "^2.3.0"
+  },
+  "engines": {
+    "node": ">=10.0"
   }
 }
