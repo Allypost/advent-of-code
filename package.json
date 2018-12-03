@@ -15,7 +15,7 @@
     "url": "https://github.com/Allypost/advent-of-code-2018.git"
   },
   "scripts": {
-    "run": "node --harmony --experimental-modules index.mjs"
+    "start": "node --harmony --experimental-modules index.mjs"
   },
   "dependencies": {
     "node-fetch": "^2.3.0"
