@@ -58,13 +58,20 @@ class Patch {
 }
 
 export class Day3 {
-    DAY = 3;
     #data = '';
     #grid = [];
     #obj = {};
 
     constructor() {
         new Solution().bindTo(this);
+    }
+
+    get DAY() {
+        return this.constructor.DAY;
+    }
+
+    static get DAY() {
+        return 3;
     }
 
     part1(data = this.#data) {

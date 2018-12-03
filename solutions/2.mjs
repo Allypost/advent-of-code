@@ -1,11 +1,18 @@
 import { Solution } from './solution';
 
 export class Day2 {
-    DAY = 2;
     #data = '';
 
     constructor() {
         new Solution().bindTo(this);
+    }
+
+    get DAY() {
+        return this.constructor.DAY;
+    }
+
+    static get DAY() {
+        return 2;
     }
 
     getDifference(a, b) {

@@ -1,11 +1,18 @@
 import { Solution } from './solution';
 
 export class Day1 {
-    DAY = 1;
     #data = '';
 
     constructor() {
         new Solution().bindTo(this);
+    }
+
+    get DAY() {
+        return this.constructor.DAY;
+    }
+
+    static get DAY() {
+        return 1;
     }
 
     part1(data = this.#data) {
