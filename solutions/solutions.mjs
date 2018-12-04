@@ -25,6 +25,8 @@ Array.prototype.flatMap = Array.prototype.flatMap || function(...args) {
     return this.map(...args).flat(1);
 };
 
+const allDays = [ Day1, Day2, Day3 ];
+
 const args =
     process.argv
            .slice(2)
@@ -33,8 +35,8 @@ const args =
            .filter(arg => Number.isInteger(arg));
 
 const days =
-    [ Day1, Day2, Day3 ]
+    allDays
         .filter(day => args.includes(day.DAY))
         .sort((a, b) => a.DAY - b.DAY);
 
-export default days;
+export default args.length ? days : allDays;
