@@ -1,6 +1,7 @@
 import { Day1 } from './1';
 import { Day2 } from './2';
 import { Day3 } from './3';
+import { Day4 } from './4';
 
 Array.prototype.flat = Array.prototype.flat || function(depth) {
     return (
@@ -25,7 +26,7 @@ Array.prototype.flatMap = Array.prototype.flatMap || function(...args) {
     return this.map(...args).flat(1);
 };
 
-const allDays = [ Day1, Day2, Day3 ];
+const allDays = [ Day1, Day2, Day3, Day4 ];
 
 const args =
     process.argv
